@@ -97,7 +97,7 @@ namespace chomo
                 }
                 catch (UriFormatException)
                 {
-                    if (url.Substring(8).ToLower() != "https://" || url.Substring(7).ToLower() != "http://")
+                    if (url.PadLeft(8, '0').ToLower() != "https://" || url.PadLeft(7, '0').ToLower() != "http://")
                     {
                         ctl.Source = new Uri("https://" + url);
                     }
